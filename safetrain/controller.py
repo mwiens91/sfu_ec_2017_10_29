@@ -3,7 +3,11 @@
 from train import Train
 
 class Controller:
-    """Docstring here."""
+    """Instantiates and monitors the transportation grid.
+
+    Attributes:
+        attr1: herp derp
+    """
     def __init__(self):
         # Useful things here
 
