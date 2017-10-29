@@ -7,7 +7,7 @@ class TrainState(Enum):
     INMOTION = 1
     IDLING = 2
     OOS = 3
-    NONE = 4
+    EMR = 4
 
 class Train:
     """Represents a train on the transportation grid.
