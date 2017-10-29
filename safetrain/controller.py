@@ -1,6 +1,5 @@
 """Controller class and related functions."""
-import os
-import sys
+
 from train import Train
 
 class Controller:
