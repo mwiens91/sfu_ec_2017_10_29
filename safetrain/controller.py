@@ -32,7 +32,7 @@ class Controller:
         
         for station in stations:
             train[index].station = station
-            index++
+            index = index + 1
             
             
     def isIntersectionOpen(train):
