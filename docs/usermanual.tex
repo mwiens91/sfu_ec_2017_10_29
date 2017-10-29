@@ -36,12 +36,27 @@ train routes but can also be used for shipping routes, commuter traffic,
 and many other transportation models. This user manual contains
 information for installing and interfacing with Safetrain\trademark{}.
 
-\chapter{Installing Safetrain\trademark{}}
+\chapter{Installing Safetrain\trademark{}}r
 
 Safetrain\trademark{} provides support for Windows, Macintosh, and Linux
 operating systems. However, this section will focus on installing
-Safetrain\trademark{} for Windows.
+Safetrain\trademark{} for Linux. To run it on Ubuntu or Debian, you will
+need Python3 and Pip3. If you do not have othese installed run
 
+{\tt \$ sudo apt install python3 pip3}
+
+You will also need the Tkinter library for Python3, which can be
+installed by running
+
+{\tt \$ pip3 install tkinter}
+
+\chapter{Running Safetrain\trademark{}}
+
+To run Safetrain\trademark{} change directory to the directory
+containing the source file {\tt main.py}. Then, providing a text file
+containing train IDs and station IDs, run
+
+{\tt \$ python3 main.py textvals.txt}
 
 \stopbodymatter
 
