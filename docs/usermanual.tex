@@ -1,0 +1,48 @@
+\setuppagenumbering[location={footer,middle}]
+\setupwhitespace[line]
+\setuphead[chapter]
+\setupcaptions[spaceafter, way=bytext, prefixsegments=none]
+\usemodule[units]
+
+\starttext
+
+\startfrontmatter
+
+\dontleavehmode
+\blank[17em]
+
+% Title page
+
+\startalignment[center]
+  {\bfd Safetrain User Manual}
+  \blank[2*medium]
+  {\tfa \italic{Keeping trains safe since 2018}}
+\stopalignment
+
+\page
+
+% Table of Contents
+\completecontent % with title
+
+\stopfrontmatter
+
+\startbodymatter
+
+\chapter{Introduction}
+
+Safetrain\trademark{} provides a complete solution for automatically
+managing and maintaining transportation grids. It is tailored to model
+train routes but can also be used for shipping routes, commuter traffic,
+and many other transportation models. This user manual contains
+information for installing and interfacing with Safetrain\trademark{}.
+
+\chapter{Installing Safetrain\trademark{}}
+
+Safetrain\trademark{} provides support for Windows, Macintosh, and Linux
+operating systems. However, this section will focus on installing
+Safetrain\trademark{} for Windows.
+
+
+\stopbodymatter
+
+\stoptext
