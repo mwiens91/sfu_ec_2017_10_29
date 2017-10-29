@@ -34,7 +34,9 @@ class Train:
         self.controller = controller
         self.idnum = idnum
         self.state = state
-        self.velocity = velocity
+        self.velocity = 0
+        self.acceleration = 9.8
+
         self.frontRed = 0
         self.frontYellow = 0
         self.backBlue = 0
@@ -68,5 +70,29 @@ class Train:
         else:
             self.velocity -= delta
 
+    def nearestIntersection(self):
+        return 1000
+
+    def yellowZoneIsEmpty(self):
+        if self.nearestIntersection() < self.frontYellow and 1:
+            return True
+        return False
+
+    def redZoneIsEmpty(self):
+        if self.nearestIntersection() < self.frontRed and :
+            return True
+        return False
 
     def eStop(self):
+        while self.velocity > 0:
+            self.changeSpeed(self.maxSlowAmount)
+
+    def eSlow(self):
+        while self.yellowZoneIsEmpty():
+            self.changeSpeed(self.maxSlowAmount)
+
+
+
+if __name__ == "__main__":
+    # Self-test code
+    train1 = Train()
