@@ -81,4 +81,26 @@ class Controller:
             return True
 
     def distanceToIntersection(self, train_):
-        pass
+        # Find which train we're testing for
+        if train_.road == 2:
+            # If train 2, test which intersection coming next.
+            # Test for intersection 1,2 first
+            if ((train_.position < self.intersections[1][1] and train_.velocity > 0)
+              or (train_.position < self.intersections[3][1] and train_.position > [1][1] and train_.velocity < 0)):
+                return train_.position - self.intersections[1][1]
+            elif ((train_.position > self.intersections[3][1] and train_.velocity < 0)
+              or (train_.position > self.intersections[1][1] and train_.position < [3][1] and train_.velocity > 0)):
+                return train_.position - self.intersections[3][1]
+            else:
+                # Not approaching an intersection
+                return -1
+        elif train_.road == 1:
+            if train_.position < self.intersections[1][1]:
+                return self.intersections[1][1] - train_.position
+            else:
+                return -1
+        else:
+            if train_.position < self.intersections[3][1]:
+                return self.intersections[3][1] - train_.position
+            else:
+                return -1
