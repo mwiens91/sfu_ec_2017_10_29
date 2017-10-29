@@ -18,6 +18,8 @@ class Train:
         self.frontRed = 0
         self.frontYellow = 0
         self.backBlue = 0
+
+
     def calculateBuffer(self):
         if self.velocity >= 51:
             self.frontRed = 121.4 + (((self.velocity-51)/37)*51.8)
@@ -35,6 +37,20 @@ class Train:
             self.frontRed = 50
             self.frontYellow = 100
             self.backBlue = 100
+
+
+    def getTrainState(self):
+        return self.state
+
+    def changeSpeed(self, delta):
+        if delta >= 0:
+            self.velocity += delta
+        else:
+            self.velocity -= delta
+
+
+    def eStop(self):
+
 if __name__ == "__main__":
     # Self-test code
     train1 = Train()
