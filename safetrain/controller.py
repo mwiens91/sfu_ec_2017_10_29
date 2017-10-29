@@ -14,9 +14,9 @@ class Controller:
 	    self.trains = trains
 	    train = []
 	    
-	    if trains > 0:
-	        train += Train('00001', IDLING, 0)
-	    if trains > 1:
+	if trains > 0:
+	    train += Train('00001', IDLING, 0)
+	if trains > 1:
             train += Train('00002', IDLING, 0)
         if trains > 2:
             train += Train('00003', IDLING, 0)
