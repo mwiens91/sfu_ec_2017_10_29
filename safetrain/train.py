@@ -29,13 +29,15 @@ class Train:
         backBlue: A float representing the rear blue buffer, which
             interacts with frontRed and frontYellow above.
     """
-    def __init__(self, controller, idnum, state, velocity):
+    def __init__(self, controller, idnum, state):
         """Initialize train variables."""
         self.controller = controller
         self.idnum = idnum
         self.state = state
         self.velocity = 0
         self.acceleration = 9.8
+        self.maxSlowAmount = -9.8
+        self.position = 0
 
         self.frontRed = 0
         self.frontYellow = 0
@@ -64,32 +66,43 @@ class Train:
     def getTrainState(self):
         return self.state
 
-    def changeSpeed(self, delta):
-        if delta >= 0:
-            self.velocity += delta
-        else:
-            self.velocity -= delta
+    def bufferIsClear(self):
+        if self.yellowZoneIsEmpty() and self.redZoneIsEmpty():
+            return True
+        return False
 
-    def nearestIntersection(self):
-        return 1000
 
     def yellowZoneIsEmpty(self):
-        if self.nearestIntersection() < self.frontYellow and 1:
+        if self.controller.distanceToIntersection() < self.frontYellow and self.controller.isIntersectionOpen():
             return True
         return False
 
     def redZoneIsEmpty(self):
-        if self.nearestIntersection() < self.frontRed and :
+        if self.controller.distanceToIntersection() < self.frontRed and self.controller.isIntersectionOpen():
             return True
         return False
 
     def eStop(self):
-        while self.velocity > 0:
+        while self.redZoneIsEmpty():
             self.changeSpeed(self.maxSlowAmount)
 
     def eSlow(self):
         while self.yellowZoneIsEmpty():
             self.changeSpeed(self.maxSlowAmount)
+
+    def speedUp(self):
+        if self.velocity < 88.5:
+            self.changeSpeed(self.acceleration)
+
+
+    def changeSpeed(self, delta):
+        if self.velocity + delta > 88.5:
+            self.velocity = 88.5
+        elif self.velocity + delta < 0:
+            self.velocity = 0
+        else:
+            self.velocity += delta
+
 
 
 
