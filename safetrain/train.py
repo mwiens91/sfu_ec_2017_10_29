@@ -29,13 +29,14 @@ class Train:
         backBlue: A float representing the rear blue buffer, which
             interacts with frontRed and frontYellow above.
     """
-    def __init__(self, controller, idnum, state, velocity):
+    def __init__(self, controller, idnum, road):
         """Initialize train variables."""
         self.controller = controller
         self.idnum = idnum
-        self.state = state
+        self.road = road
         self.velocity = 0
         self.acceleration = 9.8
+        self.state = TrainState.IDLING
 
         self.frontRed = 0
         self.frontYellow = 0
