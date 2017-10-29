@@ -73,12 +73,12 @@ class Train:
 
 
     def yellowZoneIsEmpty(self):
-        if self.controller.distanceToIntersection() < self.frontYellow and self.controller.isIntersectionOpen():
+        if self.controller.distanceToIntersection() <= self.frontYellow and self.controller.isIntersectionOpen():
             return True
         return False
 
     def redZoneIsEmpty(self):
-        if self.controller.distanceToIntersection() < self.frontRed and self.controller.isIntersectionOpen():
+        if self.controller.distanceToIntersection() <= self.frontRed and self.controller.isIntersectionOpen():
             return True
         return False
 
