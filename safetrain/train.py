@@ -1,5 +1,6 @@
 """Train class and related functions."""
 
+from . import controller
 from enum import Enum
 
 class TrainState(Enum):
@@ -28,8 +29,9 @@ class Train:
         backBlue: A float representing the rear blue buffer, which
             interacts with frontRed and frontYellow above.
     """
-    def __init__(self, idnum=00000, state, velocity):
+    def __init__(self, controller, idnum, state, velocity):
         """Initialize train variables."""
+        self.controller = controller
         self.idnum = idnum
         self.state = state
         self.velocity = velocity
@@ -68,7 +70,3 @@ class Train:
 
 
     def eStop(self):
-
-if __name__ == "__main__":
-    # Self-test code
-    train1 = Train()

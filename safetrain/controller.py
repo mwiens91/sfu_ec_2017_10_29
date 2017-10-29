@@ -1,6 +1,6 @@
 """Controller class and related functions."""
 
-from train import Train
+from . import train
 
 class Controller:
     """Instantiates and monitors the transportation grid.
@@ -16,7 +16,6 @@ class Controller:
         Train('00005', IDLING, 0)
         Train('00006', IDLING, 0)
 
-
-if __name__ == "__main__":
-    # Self-test code
-    Controller()
+    def isIntersectionOpen(train):
+        """"""
+        pass
