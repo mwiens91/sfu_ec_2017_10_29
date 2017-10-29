@@ -4,11 +4,12 @@ import time
 import logging
 
 def initialize_log():
-	logging.basicConfig(filename='result.txt',
+	logging.basicConfig(
+		filename='result.txt',
 		filemode='a',
-			format='%(asctime)s,%(msecs)d - %(message)s',
-                	datefmt='%H:%M:%S',
-                	level=logging.DEBUG)
+		format='%(asctime)s,%(msecs)d - %(message)s',
+        	datefmt='%H:%M:%S',
+        	level=logging.DEBUG)
 	logging.info('##### Log Initialized #####')
 
 def log(message):
